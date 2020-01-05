@@ -12,9 +12,9 @@ sms_to = os.environ['twilio_sms_to']
 sms_from = os.environ['twilio_sms_from']
 
 # setting the alert parameters
-alert_after = "21:00:00"
+alert_after = "11:00:00"
 alert_before = "23:00:00"
-alert_battery = 50
+alert_battery = 90
 
 # setting other variables
 loop = 0
@@ -34,6 +34,7 @@ def check_tesla():
 def send_alert(battery_percent, car_name):
     # creating twilio client object
     client = Client(twilio_sid, twilio_token)
+
     # converting battery percent to string in order to concatenate
     battery_percent = str(battery_percent)
 
@@ -49,6 +50,7 @@ def send_alert(battery_percent, car_name):
 while loop == 0:
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
+
     # checking if current time is within the specified alert window
     if current_time > alert_after and current_time < alert_before:
         battery_percent, car_state, car_name = check_tesla()
