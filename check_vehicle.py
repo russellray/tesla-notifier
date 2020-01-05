@@ -44,13 +44,15 @@ def send_alert(battery_percent, car_name):
         body=car_name+" is not plugged in! Current battery level: "+battery_percent
     )
 
+    print(message.sid)
+
 while loop == 0:
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     # checking if current time is within the specified alert window
     if current_time > alert_after and current_time < alert_before:
         battery_percent, car_state, car_name = check_tesla()
-        if car_state != 'Charging'and battery_percent < alert_battery:
+        if car_state != 'Charging' and battery_percent < alert_battery:
             # sending alert
             send_alert(battery_percent, car_name)
             # sleeping for 60 minutes

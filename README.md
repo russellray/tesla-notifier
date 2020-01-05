@@ -12,4 +12,4 @@ This script will check your Tesla vehicle and notify you when it is unplugged du
  `twilio_sid`: Twilio account SID  
  `twilio_token`: Twilio authentication token  
  `twilio_sms_to`: Number to send notifications to (must be validated in Twilio)  
- `sms_from`: Twilio phone number  
+ `twilio_sms_from`: Twilio phone number  
