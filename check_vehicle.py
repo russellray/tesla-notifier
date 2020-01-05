@@ -12,9 +12,9 @@ sms_to = os.environ['twilio_sms_to']
 sms_from = os.environ['twilio_sms_from']
 
 # setting the alert parameters
-alert_after = "11:00:00"
+alert_after = "21:00:00"
 alert_before = "23:00:00"
-alert_battery = 90
+alert_battery = 50
 
 # setting other variables
 loop = 0
